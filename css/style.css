@@ -1,0 +1,66 @@
+body {
+  font-family: 'Helvetica';
+}
+
+* {
+  margin: 0;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -80px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+  height: 80px; /* .push must be the same height as .footer */
+}
+
+/* Page style */
+
+header {
+  background-color: #333;
+  color: #FFF;
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #FFF;
+  padding: 20px;
+}
+
+main {
+  padding: 30px;
+}
+
+main > div {
+  padding: 20px;
+}
+
+.huge {
+  font-size: 4em;
+}
+.roman {
+  font-family: 'Times New Roman';
+  text-transform: uppercase;
+}
+.centre {
+  text-align: center;
+}
+
+article {
+  padding: 20px;
+  border: 1px solid #DDD;
+}
+
+/* Some fixing */
+
+h3, p {
+  padding-bottom: 10px;
+}
