@@ -16,13 +16,19 @@
     <article>
         <h3>About this page</h3>
         <p>
-            This is a small code focused in the PHPUnit testing code and the PHP project itself. This project is not "RESTful" because it was not the aim of it.
+            This is a small code focused in the Jasmine testing code and the JS code.
         </p>
         <p>
-            There is only one controller in this project and there are no models because there is no intention of persisting data.
+            There is no intention of persisting data, so there are no models.
         </p>
         <p>
-            The JavaScript exists merely to reload the page with updated query strings and there is no sophisticated method of updating the data.
+            The JavaScript code was designed in a way it follows an MVC architectural pattern by using subscriptions. Whenever the "do it!" button is clicked, the view object publishes a message intercepted by the controller, which generates the roman numeral and publishes another message received by the view. The interface is then updated with the new data.
+        </p>
+        <p>
+            I left the logs of the MVC objects intact.
+        </p>
+        <p>
+            The test can be seen here: <a href="jasmine/SpecRunner.html" target="_blank">Jasmine tests</a>.
         </p>
     </article>
 </div>

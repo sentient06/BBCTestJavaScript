@@ -26,4 +26,53 @@ describe("Roman Numerals", function() {
     done();
   });
 
+  describe("should generate", function() {
+    beforeEach(function() {
+      controller.setNumber(769);
+    });
+    it("medieval numeral", function() {
+      controller.setMethod(MEDIEVAL);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('PHOZI');
+    });
+    it("traditional numeral", function() {
+      controller.setMethod(TRADITIONAL);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('DCCLXVIIII');
+    });
+    it("normal numeral", function() {
+      controller.setMethod(NORMAL);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('DCCLXIX');
+    });
+    it("zero from negative number", function() {
+      controller.setNumber(-2);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('nulla');
+    });
+  });
+
+  describe("should", function() {
+    it("round up a number with decimals", function() {
+      controller.setNumber(10.99);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('XI');
+    });
+    it("round down a number with decimals", function() {
+      controller.setNumber(10.4999999);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('X');
+    });
+    it("generate zero from negative number with decimals", function() {
+      controller.setNumber(-10.4999999);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('nulla');
+    });
+    it("complain of big numbers", function() {
+      controller.setNumber(1000000);
+      controller.generateRomanNumeral();
+      expect(controller.getResult()).toEqual('nimis magna!');
+    });
+  });
+
 });

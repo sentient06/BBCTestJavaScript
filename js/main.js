@@ -1,10 +1,8 @@
-var model      = new Model('model');
 var view       = new View('view');
 var controller = new IndexController('controller');
 
 view.registerEvent('BUTTON_CLICKED');
 view.clickedButton = function(method, number) {
-    // console.log('clicked method:', method);
     this.publish('BUTTON_CLICKED', parseInt(method, 10), parseInt(number, 10));
 };
 
@@ -16,9 +14,8 @@ controller.subscribeTo('view', 'BUTTON_CLICKED', function(data) {
     controller.publish('CONVERTED', controller.getResult());
 });
 
-
 // --------------------------------------------------------------------------------------------
-
+// Run code after page is loaded:
 
 (function(){ "use strict"; var doc = document;
 doc.addEventListener('DOMContentLoaded', function() {
@@ -47,7 +44,6 @@ doc.addEventListener('DOMContentLoaded', function() {
         var $result = document.getElementById('result');
 
         $button.onclick = function() {
-            // console.log('dom method:', $method.value);
             view.clickedButton($method.value, $number.value);
         };
 
